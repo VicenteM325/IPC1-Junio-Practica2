@@ -30,7 +30,7 @@ public class PracticaPelis{
        public PracticaPelis(){
               menu();
        }
-
+       //menu inicial
        public void menu(){
               do{
                      System.out.println(" ---Menu de Opciones--- ");
@@ -49,7 +49,6 @@ public class PracticaPelis{
               switch (opcion) {
                 case 1:
                      System.out.println("----------------PRESTAMO DE PELICULAS----------------");
-                    // prestamoPeliculas(id, disponible); 
                        prestaPeliculas(id,idCliente, disponible, estadoCliente);
                        break;
                 case 2:
@@ -87,7 +86,7 @@ public class PracticaPelis{
 
         
     }
-       //Metodo ingreso de peliculas nuevas
+       //Modulo ingreso de peliculas nuevas
        public void ingresoPeliculas(int[] id, String[] nombre, int []creacion, String[] categoria, boolean[] disponible){
            int cantidad;
            System.out.print("Cuantas peliculas desea ingresar: ");
@@ -106,7 +105,7 @@ public class PracticaPelis{
            }
          
        }
-       //Metodo mostrar todos los datos de las peliculas
+       //Modulo mostrar todos los datos de las peliculas
        public void mostrarPeliculas(int[] id, String[] nombre, int []creacion, String[] categoria, boolean[] disponible){
               for(int i = 0; i < contadorPelicula; i++){
               
@@ -141,6 +140,7 @@ public class PracticaPelis{
                                     + " |||  Estado: " +  estadoCliente[i]);      
               }
        }
+       //modulo para prestar o alquilar peliculas
        public void prestaPeliculas(int [] id, int [] idCliente, boolean [] disponible, boolean[] estadoCliente){
               int pelicula, cliente;
               System.out.print("Ingrese id pelicula: ");
@@ -166,7 +166,7 @@ public class PracticaPelis{
               System.out.println("El estado de la pelicula con id: " + pelicula + " se ha cambiado, al igual que el cliente con id: " + cliente);
               System.out.println("La pelicula se ha alquilado por " + diasPrestamo[contadorPrestacion] + " dias.");
        }
-
+       //modulo para guardar la devolución de las peliculas alquiladas
        public void devolucionPeliculas(String[] nombreCliente, String[] nombre, boolean[] estadoCliente,boolean[] disponible){
               int cliente, pelicula;
               System.out.print("Ingrese el id del cliente: ");
